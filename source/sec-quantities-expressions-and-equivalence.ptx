@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-quantities-expressions-and-equivalence" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Quantities, Expressions, and Equivalence</title>
+
+    <paragraphs xml:id="opening-example-1-1">
+      <title>Opening Example</title>
+
+      <p>
+          Ariana is taking a picture of her friend on her phone. She experiments with different camera settings until she's happy with the photograph.
+      </p>
+      <p>
+          There are many quantities in this problem, some of which vary and some of which do not. For instance, the <em>width of Ariana's friend's face on the screen</em> is one quantity that varies. Identify at least two other quantities that vary and two quantities that remain fixed.
+      </p>
+      
+      <aside>
+        <title>Student Thinking</title>
+
+        <sidebyside widths="48% 48%">
+            <stack>
+                <p><em>Sidney</em></p>
+                <p>
+                    The width of her friend's face on the screen might change, but the actual width of her friend's face should remain the same so I think that's one fixed quantity. I guess the height of her friend's face on the screen could also vary as she zooms in and out.
+                </p>
+            </stack>
+
+            <stack>
+                <p><em>Erika</em></p>
+                <p>
+                    I think maybe the distance from the camera could vary like if she moved closer to or further away from her friend? Maybe, also something about the brightness of the photo like if they turned on some extra lights in the room?
+                </p>
+            </stack>
+        </sidebyside>
+        
+      </aside>
+    </paragraphs>
+
+</section>

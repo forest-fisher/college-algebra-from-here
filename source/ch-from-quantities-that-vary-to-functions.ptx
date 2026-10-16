@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-from-quantities-that-vary-to-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>From Quantities That Vary to Functions</title>
+
+  <introduction>
+    <p> Text before the first section. </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-quantities-expressions-and-equivalence.ptx" />
+  <xi:include href="sec-graphing.ptx" />
+  <xi:include href="sec-functions.ptx" />
+  <xi:include href="sec-rates-of-change.ptx" />
+
+</chapter>
