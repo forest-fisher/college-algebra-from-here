@@ -109,6 +109,7 @@
   </source>
 
   <numbering>
+    <exercises distinct="yes" level="2"/>
     <!-- The divisions element describes the numbering of divisions.   -->
     <!-- @level is the deepest division that gets a number, 0 through  -->
     <!-- 6 (chapter, section, subsection, and so on); it is also the   -->
@@ -223,7 +224,9 @@
   <!--   that copies an iframe snippet for your website or LMS.         -->
   <!-- @design-width is an integer, default 600, used as the base when  -->
   <!--   a percentage width for an interactive must become pixels.      -->
-  <html>
+  
+  <html short-answer-responses="always">
+    <knowl exercise-inline="no"/>
   <!-- Replace the <html> tag above with the one below to try these-->
   <!--
     <html

@@ -37,9 +37,11 @@
   <!-- Specify the default type of cross reference: -->
   <!-- <cross-references text="type-global" /> -->
 
-  <!-- Use inline exercises as examples in the chapter-->
-  <!-- This allows us to replace "Solutions" with "Student Thinking"-->
-  <rename element="inlineexercise">Example</rename>
+  <!-- Use inline exercises as Examples in the chapter-->
+  <!-- Replace solutions with Student Thinking"-->
+  <!-- Note (Oct 16, 2026): This is a hack. Ultimately want Student Thinking to display for solutions on for inline exercises aka "Examples"-->
+  <!-- Also, eventually want a different numbering scheme: Example (aka inline exercise) 1.1.1 becomes "Opening Example" and for n > 1, Example (aka inline exercise) 1.1.n becomes Example n - 1 (like Example 1.1.4 displays as Example 3) -->
   <rename element="exercise-inline">Example</rename>
+  <rename element="solution">Student Thinking</rename>
 
 </docinfo>
