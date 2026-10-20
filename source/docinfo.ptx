@@ -38,10 +38,13 @@
   <!-- <cross-references text="type-global" /> -->
 
   <!-- Use inline exercises as Examples in the chapter-->
-  <!-- Replace solutions with Student Thinking"-->
-  <!-- Note (Oct 16, 2026): This is a hack. Ultimately want Student Thinking to display for solutions on for inline exercises aka "Examples"-->
-  <!-- Also, eventually want a different numbering scheme: Example (aka inline exercise) 1.1.1 becomes "Opening Example" and for n > 1, Example (aka inline exercise) 1.1.n becomes Example n - 1 (like Example 1.1.4 displays as Example 3) -->
   <rename element="exercise-inline">Example</rename>
-  <rename element="solution">Student Thinking</rename>
+
+  <!-- NOTE: Considered replacing solutions with "Student Thinking."-->
+  <!-- However, the knowl made it easy to overlook the student thinking. -->
+  <!-- And I want one "Student Thinking" section for an entire task while solutions are presented per part of the task-->
+  <!-- Ultimately, decided to use assemblage for the student thinking and not have it knowled-->
+    <!-- <rename element="solution">Student Thinking</rename> -->
+    <!-- <rename element="remark">Student Thinking</rename> -->
 
 </docinfo>

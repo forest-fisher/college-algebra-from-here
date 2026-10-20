@@ -3,25 +3,43 @@
 <section xml:id="sec-quantities-expressions-and-equivalence" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Quantities, Expressions, and Equivalence</title>
 
-    <exercise xml:id="opening-example-1-1">
+    <exercise xml:id="opening-example-ariana">
         <title>Opening Example</title>
 
-        <statement>
+        <introduction>
+            <p>
+                We start this section with an example.
+            </p>
             <p>
                 Ariana is taking a picture of a friend on her phone. She experiments with different camera settings until she's happy with the photograph.
             </p>
 
-            <!-- Insert the photograph illustration here. -->
+            <image source="photos/ariana.png" width="70%">
+            <shortdescription>
+                Ariana's friend appears on a phone screen.
+            </shortdescription>
+            </image>
 
             <p>
-                There are many quantities in this problem, some of which vary and some of which do not. For instance, the <em>width of Ariana's friend's face on the screen</em> is one quantity that varies.
+                In algebra, we usually work with quantities that vary. By <em>quantity</em>, we mean something you can measure. There are many quantities Ariana might consider when taking her photo. Some of them change but some of them do not. For instance, the <em>width of the friend's face on the screen</em> is one quantity that varies. We can measure this width as we zoom in and out and watch it change. On the other hand,  the width of the screen is a quantity that does not change. The width of the screen will never change no matter how far we zoom in or out.
             </p>
             <p>
-                Identify at least two other quantities that vary and two quantities that remain fixed.
+                Identify at least two other quantities that vary and two other quantities that remain fixed.
             </p>
-        </statement>
+        </introduction>
 
-        <response/>
+        <task>
+            <statement>
+                <p>Quantities that vary:</p>
+            </statement>
+            <response/>
+        </task>
+        <task>
+            <statement>
+                <p>Fixed quantities:</p>
+            </statement>
+            <response/>
+        </task>
 
         <solution>
             <sidebyside widths="48% 48%">
@@ -43,11 +61,31 @@
             </sidebyside>
         </solution>
     </exercise>
+    <assemblage>
+        <title>Student Thinking</title>
+        <sidebyside widths="48% 48%">
+            <stack>
+                <p><em>Sidney</em></p>
+
+                <p>
+                    The width of her friend's face on the screen might change, but the actual width of her friend's face should remain the same so I think that's one fixed quantity. I guess the height of her friend's face on the screen could also vary as she zooms in and out.
+                </p>
+            </stack>
+
+            <stack>
+                <p><em>Erika</em></p>
+
+                <p>
+                    I think maybe the distance from the camera could vary like if she moved closer to or further away from her friend? Maybe, also something about the brightness of the photo like if they turned on some extra lights in the room?
+                </p>
+            </stack>
+        </sidebyside>
+    </assemblage>
     <p>
-        Sidney and Erika provided some great examples of quantities that vary. The actual width of Ariana’s friend's face does not change. However, by adjusting the angle of the camera, the zoom settings, and even the distance from her friend, Ariana can vary the width of her friends’ face as it appears on the screen. Some other quantities that vary include the pixel depth and the brightness of the image. Another fixed quantity is the dimensions of the screen on her phone.
+        Sidney and Erika provided some great examples of quantities that vary. The actual width of Ariana’s friend's face does not change. However, when Ariana zooms in and out, the width of her friend’s face on the screen does change. Some other quantities that vary include the pixel depth and the brightness of the image. Another fixed quantity is the dimensions of the screen on her phone.
     </p>
     <p>
-        Algebra is full of quantities like these—some that change, some that stay fixed, and others whose values we don't yet know. We use letters like <m>x</m> and <m>y</m> to represent all these different kinds of quantities, not just the ones we don’t yet know. To master algebra, you will need to get comfortable working with letters in all these different ways. We start this section by exploring how letters are used in algebraic expressions.
+        Algebra is full of quantities like these—some that change, some that stay fixed, and others whose values we don't yet know. We use letters like <m>x</m> and <m>y</m> to represent all these different kinds of quantities, not just the ones we don’t yet know. To master algebra, you will need to get comfortable working with letters in all these different ways. We will explore many such examples in this section starting with algebraic expressions.
     </p>
     <definition xml:id="def-algebraic-expression">
         <statement>
@@ -59,10 +97,21 @@
     <p>
         For instance, <m>3 + x</m>,  <m>\;6A - 7</m>,  <m>\;p {\cdot} p + 4q</m>,  and  <m>\;\frac{45s}{t}</m> are all algebraic expressions. Even a single number or letter on its own (just <m>x</m> or just <m>9</m>) can be an algebraic expression.
     </p>
-    <exercise xml:id="example-1-1-2">
+    <p>
+        An expression like <m>S + C</m> tells us how to calculate (add <m>S</m> and <m>C</m>) but it also represents the quantity we get from that calculation. For instance, if <m>S</m> is the amount of money in your savings account and <m>C</m> is the amount of money in your checking account, then <m>S + C</m> is the total money you have in both accounts.
+    </p>
+    <p>
+        To really understand this expression, you need to be able to do three things:
+        <ol>
+            <li>Calculate <m>S + C</m> by plugging in different values for <m>S</m> and <m>C</m> and adding them up.</li>
+            <li>Imagine quantities <m>S</m> and <m>C</m> increasing and decreasing.</li>
+            <li>Interpret the meaning <m>S + C</m> as the total money in both accounts.</li>
+        </ol>
+        Most people can do number one, but struggle with two and three. Unfortunately, two and three are more important skills so we are going to take a moment to practice them.
+    </p>
+    <exercise xml:id="ariana-revisited">
         <title>Returning to Ariana's Photograph</title>
-
-        <statement>
+        <introduction>
             <p>
                 Consider again the photograph that Ariana is taking on her phone. We'll use four letters to describe what we see:
                 <ul>
@@ -72,72 +121,55 @@
                     <li><m>L</m> is the distance from the left edge of the frame to the left edge of the face.</li>
                 </ul>
             </p>
-            
-            <!-- Insert the interactive of the photograph here. -->
-
+            <image source="photos/ariana.png" width="70%">
+            <shortdescription>
+                Ariana's friend appears on a phone screen.
+            </shortdescription>
+            </image>
             <p>
-                Use the sliders in the image to adjust the zoom settings and point the camera left/right. Pay attention to the bars A-D below the phone; they represent different quantities that are changing as Ariana modifies the settings on her phone.
+                Consider the expression <m>L + zF</m>. Experiment with the two sliders and observe how the bars A-D change.
             </p>
-            <p>
-                Match each algebraic expression with the quantity it represents and the bar (A-D) that represents it in the image.
-            </p>
-        </statement>
-
-        <cardsort>
-            <match>
-                <response><m>zF</m></response>
-
-                <premise>C</premise>
-                <premise>Width of the face in the image at current zoom level.</premise>
-            </match>
-
-            <match>
-                <response><m>L + zF</m></response>
-
-                <premise>B</premise>
-                <premise>Distance in the left edge of the frame to the right edge of the face.</premise>
-            </match>
-
-            <match>
-                <response><m>W - zF</m></response>
-
-                <premise>D</premise>
-                <premise>Total space on both sides of the face.</premise>
-            </match>
-
-            <match>
-                <response><m>W - (L + zF)</m></response>
-
-                <premise>A</premise>
-                <premise>Space to the right of the face in the image.</premise>
-            </match>
-        </cardsort>
-        
-        <solution>
-            <sidebyside widths="48% 48%">
-                <stack>
-                    <p><em>Sofia</em></p>
-
-                    <p>
-                        This is hard! As we zoom in, her face should get wider on the screen. By the time we get to 2x zoom, her face should have width <m>2F</m>. I think that mean that <m>zF</m> is the width of the face at the current zoom level. In that case, <m>W – zF</m> should be like what we get if we remove her face? That sounds like the width of the space around her face.
-                    </p>
-                </stack>
-
-                <stack>
-                    <p><em>Jefferson</em></p>
-
-                    <p>
-                        If we point the camera to the right without changing the zoom, her face gets closer to the left edge of the picture, so <m>L</m> gets smaller. That means <m>L + zF</m> gets smaller too. But I'm not sure what adding those two measurements tells us about the picture.
-                    </p>
-                </stack>
-            </sidebyside>
-        </solution>
+        </introduction>
+        <task>
+            <statement>
+                <p>
+                    Which bar do you think represents <m>L+zF</m>?
+                </p>
+            </statement>
+            <choices>
+                <choice><p>A</p></choice>
+                <choice><p>B</p></choice>
+                <choice correct="yes"><p>C</p></choice>
+                <choice><p>D</p></choice>
+            </choices>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    What does the expression <m>L + zF</m> measure? Explain your thinking.
+                </p>
+            </statement>
+            <response/>
+        </task>
     </exercise>
+    <assemblage>
+        <title>Student Thinking</title>
+        <sidebyside widths="48% 48%">
+            <stack>
+                <p><em>Sofia</em></p>
 
-    <!--To add later:-->
-    
-    <!--Analysis of what Sofia and Jefferson said followed by the question.-->
+                <p>
+                    As we zoom in, her face should get wider on the screen. By the time we get to 2x zoom, her face should have width <m>2F</m>. I think that means that <m>zF</m> is the width of the face at the current zoom level and <m>L + zF</m> should get bigger as we zoom in. I noticed that both A and C get bigger as we zoom in so I think it's one of those two quantities.
+                </p>
+            </stack>
+            <stack>
+                <p><em>Jefferson</em></p>
 
-    <!--Follow-up Question: Suppose Ariana changes the direction of her camera without changing the zoom. Which magnitude bars change, and which stay the same? Explain how you know-->
+                <p>
+                    If we point the camera to the right without changing the zoom, her face gets closer to the left side of the picture, so <m>L</m> gets smaller. That means <m>L + zF</m> gets smaller too. Because of this, I think <m>L + zF</m> has something to do with the distance from the left side of the photo?
+                </p>
+            </stack>
+        </sidebyside>        
+    </assemblage>
 
 </section>
