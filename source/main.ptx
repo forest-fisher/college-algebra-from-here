@@ -6,7 +6,7 @@
 
   <book xml:id="my-great-book">
     <title>College Algebra from Here</title>
-    <subtitle>Reasoning with Symbols and Structure (Including Trigonometry)</subtitle>
+    <subtitle>Reasoning with Symbols and Structure</subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />

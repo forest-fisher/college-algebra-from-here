@@ -21,7 +21,7 @@
             </image>
 
             <p>
-                In algebra, we usually work with quantities that vary. By <em>quantity</em>, we mean something you can measure. There are many quantities Ariana might consider when taking her photo. Some of them change but some of them do not. For instance, the <em>width of the friend's face on the screen</em> is one quantity that varies. We can measure this width as we zoom in and out and watch it change. On the other hand,  the width of the screen is a quantity that does not change. The width of the screen will never change no matter how far we zoom in or out.
+                In algebra, we usually work with quantities that vary. By <em>quantity</em>, we mean something you can measure. There are many quantities Ariana might consider when taking her photo. Some of them change while others do not. For instance, the <em>width of her friend's face on the screen</em> is one quantity that varies. We can measure this width and watch it change as we zoom in and out. On the other hand,  the overall width of the screen is a quantity that does not change no matter how far we zoom in or out.
             </p>
             <p>
                 Identify at least two other quantities that vary and two other quantities that remain fixed.
@@ -40,40 +40,26 @@
             </statement>
             <response/>
         </task>
-
-        <solution>
-            <sidebyside widths="48% 48%">
-                <stack>
-                    <p><em>Sidney</em></p>
-
-                    <p>
-                        The width of her friend's face on the screen might change, but the actual width of her friend's face should remain the same so I think that's one fixed quantity. I guess the height of her friend's face on the screen could also vary as she zooms in and out.
-                    </p>
-                </stack>
-
-                <stack>
-                    <p><em>Erika</em></p>
-
-                    <p>
-                        I think maybe the distance from the camera could vary like if she moved closer to or further away from her friend? Maybe, also something about the brightness of the photo like if they turned on some extra lights in the room?
-                    </p>
-                </stack>
-            </sidebyside>
-        </solution>
     </exercise>
     <assemblage>
         <title>Student Thinking</title>
         <sidebyside widths="48% 48%">
             <stack>
-                <p><em>Sidney</em></p>
+                <p>
+                    <image source="photos/sidney-mockup-3.png" width="100%">
+                    </image>
+                </p>
 
                 <p>
-                    The width of her friend's face on the screen might change, but the actual width of her friend's face should remain the same so I think that's one fixed quantity. I guess the height of her friend's face on the screen could also vary as she zooms in and out.
+                    You know, even if she zooms in on her camera, the width of her friend's actual face in real-life is not going to change. So one fixed quantity is the actual width of her friend's face. I guess the height of her friend's face is also fixed in real-life but the height of the face on the screen will vary as you zoom in and out.
                 </p>
             </stack>
 
             <stack>
-                <p><em>Erika</em></p>
+                <p>
+                    <image source="photos/ericka-mockup-3.png" width="100%">
+                    </image>
+                </p>
 
                 <p>
                     I think maybe the distance from the camera could vary like if she moved closer to or further away from her friend? Maybe, also something about the brightness of the photo like if they turned on some extra lights in the room?
@@ -85,7 +71,7 @@
         Sidney and Erika provided some great examples of quantities that vary. The actual width of Ariana’s friend's face does not change. However, when Ariana zooms in and out, the width of her friend’s face on the screen does change. Some other quantities that vary include the pixel depth and the brightness of the image. Another fixed quantity is the dimensions of the screen on her phone.
     </p>
     <p>
-        Algebra is full of quantities like these—some that change, some that stay fixed, and others whose values we don't yet know. We use letters like <m>x</m> and <m>y</m> to represent all these different kinds of quantities, not just the ones we don’t yet know. To master algebra, you will need to get comfortable working with letters in all these different ways. We will explore many such examples in this section starting with algebraic expressions.
+        Algebra is full of quantities like these—some that change, some that stay fixed, and others whose values we don't yet know. We use letters like <m>x</m> and <m>y</m> to represent all these different kinds of quantities, not just the ones we don’t yet know. To master algebra, you will need to get comfortable working with letters in all these different ways. As a starting point, consider how we use letters in algebraic expressions.
     </p>
     <definition xml:id="def-algebraic-expression">
         <statement>
@@ -98,16 +84,16 @@
         For instance, <m>3 + x</m>,  <m>\;6A - 7</m>,  <m>\;p {\cdot} p + 4q</m>,  and  <m>\;\frac{45s}{t}</m> are all algebraic expressions. Even a single number or letter on its own (just <m>x</m> or just <m>9</m>) can be an algebraic expression.
     </p>
     <p>
-        An expression like <m>S + C</m> tells us how to calculate (add <m>S</m> and <m>C</m>) but it also represents the quantity we get from that calculation. For instance, if <m>S</m> is the amount of money in your savings account and <m>C</m> is the amount of money in your checking account, then <m>S + C</m> is the total money you have in both accounts.
+        An expression like <m>S + C</m> tells us how to calculate a quantity (add <m>S</m> and <m>C</m>) but it also represents the quantity we get from that calculation. For instance, if <m>S</m> is the amount of money in your savings account and <m>C</m> is the amount of money in your checking account, then <m>S + C</m> is the total money you have in both accounts.
     </p>
     <p>
         To really understand this expression, you need to be able to do three things:
         <ol>
             <li>Calculate <m>S + C</m> by plugging in different values for <m>S</m> and <m>C</m> and adding them up.</li>
-            <li>Imagine quantities <m>S</m> and <m>C</m> increasing and decreasing.</li>
-            <li>Interpret the meaning <m>S + C</m> as the total money in both accounts.</li>
+            <li>Imagine the quantities <m>S</m> and <m>C</m> increasing and decreasing.</li>
+            <li>Interpret the meaning of <m>S + C</m> as the total money in both accounts.</li>
         </ol>
-        Most people can do number one, but struggle with two and three. Unfortunately, two and three are more important skills so we are going to take a moment to practice them.
+        Most people can do number one, but struggle with two and three. Unfortunately, two and three are often the more important skills so we are going to take a moment to practice them.
     </p>
     <exercise xml:id="ariana-revisited">
         <title>Returning to Ariana's Photograph</title>
@@ -146,7 +132,7 @@
         <task>
             <statement>
                 <p>
-                    What does the expression <m>L + zF</m> measure? Explain your thinking.
+                    What quantity does the expression <m>L + zF</m> represent? Explain your thinking.
                 </p>
             </statement>
             <response/>
