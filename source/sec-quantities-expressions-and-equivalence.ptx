@@ -21,7 +21,7 @@
             </image>
 
             <p>
-                In algebra, we usually work with quantities that vary. By <em>quantity</em>, we mean something you can measure. There are many quantities Ariana might consider when taking her photo. Some of them change while others do not. For instance, the <em>width of her friend's face on the screen</em> is one quantity that varies. We can measure this width and watch it change as we zoom in and out. On the other hand,  the overall width of the screen is a quantity that does not change no matter how far we zoom in or out.
+                In algebra, we usually work with quantities that vary. By <term>quantity</term>, we mean something you can measure. There are many quantities Ariana might consider when taking her photo. Some of them change while others do not. For instance, the <em>width of her friend's face on the screen</em> is one quantity that varies. We can measure this width and watch it change as we zoom in and out. On the other hand,  the <em>overall width of the screen</em> is a quantity that does not change.
             </p>
             <p>
                 Identify at least two other quantities that vary and two other quantities that remain fixed.
@@ -43,6 +43,9 @@
     </exercise>
     <assemblage>
         <title>Student Thinking</title>
+        <p>
+            Here's what some other students had to say about this problem.
+        </p>
         <sidebyside widths="48% 48%">
             <stack>
                 <p>
