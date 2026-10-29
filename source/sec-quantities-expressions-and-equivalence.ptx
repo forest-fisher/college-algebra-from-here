@@ -44,12 +44,12 @@
     <assemblage>
         <title>Student Thinking</title>
         <p>
-            Here's what some other students had to say about this problem.
+            Here is what some students had to say about this problem.
         </p>
-        <sidebyside widths="48% 48%">
+        <sidebyside widths="47% 47%">
             <stack>
                 <p>
-                    <image source="photos/sidney-mockup-3.png" width="100%">
+                    <image source="photos/students/sidney.png" width="100%">
                     </image>
                 </p>
 
@@ -60,7 +60,7 @@
 
             <stack>
                 <p>
-                    <image source="photos/ericka-mockup-3.png" width="100%">
+                    <image source="photos/students/erica.png" width="100%">
                     </image>
                 </p>
 
@@ -143,17 +143,24 @@
     </exercise>
     <assemblage>
         <title>Student Thinking</title>
-        <sidebyside widths="48% 48%">
+        <p>
+            Here is what some students had to say about this problem.
+        </p>
+        <sidebyside widths="47% 47%">
             <stack>
-                <p><em>Sofia</em></p>
-
+                <p>
+                    <image source="photos/students/sofia.png" width="100%">
+                    </image>
+                </p>
                 <p>
                     As we zoom in, her face should get wider on the screen. By the time we get to 2x zoom, her face should have width <m>2F</m>. I think that means that <m>zF</m> is the width of the face at the current zoom level and <m>L + zF</m> should get bigger as we zoom in. I noticed that both A and C get bigger as we zoom in so I think it's one of those two quantities.
                 </p>
             </stack>
             <stack>
-                <p><em>Jefferson</em></p>
-
+                <p>
+                    <image source="photos/students/jefferson.png" width="100%">
+                    </image>
+                </p>
                 <p>
                     If we point the camera to the right without changing the zoom, her face gets closer to the left side of the picture, so <m>L</m> gets smaller. That means <m>L + zF</m> gets smaller too. Because of this, I think <m>L + zF</m> has something to do with the distance from the left side of the photo?
                 </p>
