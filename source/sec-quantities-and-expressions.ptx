@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec-quantities-expressions-and-equivalence" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Quantities, Expressions, and Equivalence</title>
+<section xml:id="sec-quantities-and-expressions" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Quantities and Expressions</title>
 
     <exercise xml:id="opening-example-ariana">
         <title>Opening Example</title>
@@ -21,7 +21,7 @@
             </image>
 
             <p>
-                In algebra, we usually work with quantities that vary. By <term>quantity</term>, we mean something you can measure. There are many quantities Ariana might consider when taking her photo. Some of them change while others do not. For instance, the <em>width of her friend's face on the screen</em> is one quantity that varies. We can measure this width and watch it change as we zoom in and out. On the other hand,  the <em>overall width of the screen</em> is a quantity that does not change.
+                In algebra, we usually work with quantities that vary. By <term>quantity</term>, we mean something you can measure. There are many quantities Ariana might consider when taking her photo. Some of them change while others do not. For instance, the <em>width of her friend's face on the screen</em> is one quantity that varies. We can measure this width and watch it change as we zoom in and out. The <em>overall width of the screen</em> is another quantity, but it does not change.
             </p>
             <p>
                 Identify at least two other quantities that vary and two other quantities that remain fixed.
