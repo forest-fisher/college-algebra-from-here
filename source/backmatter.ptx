@@ -6,7 +6,7 @@
 <!-- solutions in the next. Then there is an appendix -->
 <!-- with all notation generated, and finally the index. -->
 <backmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="backmatter">
-  <title>Mathematical Toolbox and References</title>
+  <title>The Mathematical Toolbox and References</title>
 
   <appendix xml:id="toolbox">
     <title>The Mathematical Toolbox</title>
