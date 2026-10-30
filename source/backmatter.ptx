@@ -6,7 +6,47 @@
 <!-- solutions in the next. Then there is an appendix -->
 <!-- with all notation generated, and finally the index. -->
 <backmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="backmatter">
-  <title>Backmatter</title>
+  <title>Mathematical Toolbox and References</title>
+
+  <appendix xml:id="toolbox">
+    <title>The Mathematical Toolbox</title>
+
+    <introduction>
+      <p>
+        Sometimes a new idea calls for a mathematical tool—perhaps
+        fractions, negative numbers, or exponents. You may already feel
+        comfortable using that tool, or you may want some time to explore
+        how it works and what it means.
+      </p>
+
+      <p>
+        You do not need to work through the Toolbox from beginning to end.
+        Throughout the book, we will point you here whenever one of these
+        tools becomes useful.
+      </p>
+    </introduction>
+
+    <section xml:id="toolbox-rational-numbers">
+      <title>Rational Numbers</title>
+      ...
+    </section>
+
+    <section xml:id="toolbox-negative-numbers">
+      <title>Negative Numbers</title>
+      ...
+    </section>
+
+    <section xml:id="toolbox-exponents">
+      <title>Exponents</title>
+      ...
+    </section>
+
+    <section xml:id="toolbox-equations">
+      <title>Equations and Equality</title>
+      ...
+    </section>
+
+  </appendix>
 
   <!-- <solutions divisional="hint"> <title>Selected Hints</title> </solutions> -->
 

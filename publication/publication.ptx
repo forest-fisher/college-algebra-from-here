@@ -228,7 +228,7 @@
   <!-- NOTE: Using inline exercises as "examples" to set the expectation that students must stop and provide an answer for each example as they read.-->
   <html short-answer-responses="always">
     <knowl exercise-inline="no"/>
-
+    
   <!-- Replace the <html> tag above with the one below to try these-->
   <!--
     <html

@@ -38,6 +38,11 @@
             <statement>
                 <p>Fixed quantities:</p>
             </statement>
+            <hint>
+                <p>
+                    Having trouble identifying quantities?
+                </p>
+            </hint>
             <response/>
         </task>
     </exercise>

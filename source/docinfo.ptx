@@ -40,6 +40,9 @@
   <!-- Use inline exercises as Examples in the chapter-->
   <rename element="exercise-inline">Example</rename>
 
+  <!-- Give hints a more visible, approachable style since they will be used for just-in-time support -->
+  <rename element="hint">Feeling confused? Get a little help</rename>
+
   <!-- NOTE: Considered replacing solutions with "Student Thinking."-->
   <!-- However, the knowl made it easy to overlook the student thinking. -->
   <!-- And I want one "Student Thinking" section for an entire task while solutions are presented per part of the task-->
