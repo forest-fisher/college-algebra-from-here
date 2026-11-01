@@ -158,7 +158,7 @@
   <!--   underline hyperlinks in the PDF.                              -->
   <!-- @latex-style selects one of a few provided styles: AIM, chaos,  -->
   <!--   CLP, dyslexic-font, guide, texstyle.  Some are demos only.    -->
-  <latex>
+  <latex latex-style="CLP">
   <!-- Replace the <latex> tag above with the one below to try these-->
   <!--
     <latex
