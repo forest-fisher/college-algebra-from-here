@@ -292,7 +292,7 @@
     <!-- Legacy stylesheets remain available through @style, but without  -->
     <!-- the full range of configuration.  See                            -->
     <!-- https://pretextbook.org/doc/guide/html/publication-file-online.html#online-style-options -->
-      <!--<css theme="default-modern"/>-->
+      <css theme="salem"/>
 
     <!-- Search.  @variant is "textbook" (the default; the value          -->
     <!-- "default" is a synonym), "reference", or "none".  @google-cx is  -->
