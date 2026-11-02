@@ -228,6 +228,9 @@
   <!-- NOTE: Using inline exercises as "examples" to set the expectation that students must stop and provide an answer for each example as they read.-->
   <html short-answer-responses="always">
     <knowl exercise-inline="no"/>
+
+  <!-- NOTE: Make the link at the top of each section to the Instructor Notes jump to that spot in the page -->
+    <cross-references knowled="cross-page"/>
     
   <!-- Replace the <html> tag above with the one below to try these-->
   <!--

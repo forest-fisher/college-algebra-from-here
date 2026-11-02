@@ -3,6 +3,18 @@
 <section xml:id="sec-quantities-and-expressions" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Quantities and Expressions</title>
 
+    <!-- Appears only in the instructor edition -->
+    <p>
+        <assemblage
+            xml:id="instructor-note-quantities"
+            component="instructor">
+            <title>For Instructors</title>
+            <p>
+                This is the instructor edition of this textbook. See <xref ref="instructor-quantities-and-expressions" text="title"/> at the end of this section to learn more about the rationale behind this section and take a look at sample lessons.
+            </p>
+        </assemblage>
+    </p>
+
     <exercise xml:id="opening-example-ariana">
         <title>Opening Example</title>
 
@@ -38,41 +50,16 @@
             <statement>
                 <p>Fixed quantities:</p>
             </statement>
-            <hint>
-                <p>
-                    Having trouble identifying quantities?
-                </p>
-            </hint>
-            <solution>
-                <p>
-                    Here is what some students had to say about this problem.
-                </p>
-                <sidebyside widths="47% 47%">
-                    <stack>
-                        <p>
-                            <image source="photos/students/sidney.png" width="100%">
-                            </image>
-                        </p>
-
-                        <p>
-                            You know, even if she zooms in on her camera, the width of her friend's actual face in real-life is not going to change. So one fixed quantity is the actual width of her friend's face. I guess the height of her friend's face is also fixed in real-life but the height of the face on the screen will vary as you zoom in and out.
-                        </p>
-                    </stack>
-
-                    <stack>
-                        <p>
-                            <image source="photos/students/erica.png" width="100%">
-                            </image>
-                        </p>
-
-                        <p>
-                            I think maybe the distance from the camera could vary like if she moved closer to or further away from her friend? Maybe, also something about the brightness of the photo like if they turned on some extra lights in the room?
-                        </p>
-                    </stack>
-                </sidebyside>
-            </solution>
             <response/>
         </task>
+        <conclusion>
+            <aside>
+                <title>Feeling confused? Try thinking about this</title>
+                <p>
+                    Not sure how to identify a quantity? Think about what you could measure?
+                </p>
+            </aside>
+        </conclusion>
     </exercise>
     <assemblage>
         <title>Student Thinking</title>
@@ -175,37 +162,12 @@
             </task>
             <conclusion>
                 <aside>
-                    <title>Student Thinking</title>
+                    <title>Feeling confused? Try thinking about this</title>
                     <p>
-                    Here is what some students had to say
-                    about this problem.
+                        Some text, bla bla bla
                     </p>
                 </aside>
-                    <p><alert>Student Thinking</alert></p>
-                    <p>
-                        Here is what some students had to say about this problem.
-                    </p>
-                    <sidebyside widths="47% 47%">
-                        <stack>
-                            <p>
-                                <image source="photos/students/sofia.png" width="100%">
-                                </image>
-                            </p>
-                            <p>
-                                As we zoom in, her face should get wider on the screen. By the time we get to 2x zoom, her face should have width <m>2F</m>. I think that means that <m>zF</m> is the width of the face at the current zoom level and <m>L + zF</m> should get bigger as we zoom in. I noticed that both A and C get bigger as we zoom in so I think it's one of those two quantities.
-                            </p>
-                        </stack>
-                        <stack>
-                            <p>
-                                <image source="photos/students/jefferson.png" width="100%">
-                                </image>
-                            </p>
-                            <p>
-                                If we point the camera to the right without changing the zoom, her face gets closer to the left side of the picture, so <m>L</m> gets smaller. That means <m>L + zF</m> gets smaller too. Because of this, I think <m>L + zF</m> has something to do with the distance from the left side of the photo?
-                            </p>
-                        </stack>
-                    </sidebyside> 
-                        </conclusion>
+            </conclusion>
         </exercise>
     <assemblage>
         <title>Student Thinking</title>
@@ -233,5 +195,18 @@
             </stack>
         </sidebyside>        
     </assemblage>
+
+    <!-- Appears only in the instructor edition -->
+    <paragraphs
+        xml:id="instructor-quantities-and-expressions"
+        component="instructor">
+        <title>Instructor Notes</title>
+
+        <p>Research and pedagogical rationale...</p>
+
+        <p>Further reading...</p>
+
+        <p>Teaching activities and lesson materials...</p>
+    </paragraphs>
 
 </section>
