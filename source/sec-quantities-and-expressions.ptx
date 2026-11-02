@@ -43,6 +43,34 @@
                     Having trouble identifying quantities?
                 </p>
             </hint>
+            <solution>
+                <p>
+                    Here is what some students had to say about this problem.
+                </p>
+                <sidebyside widths="47% 47%">
+                    <stack>
+                        <p>
+                            <image source="photos/students/sidney.png" width="100%">
+                            </image>
+                        </p>
+
+                        <p>
+                            You know, even if she zooms in on her camera, the width of her friend's actual face in real-life is not going to change. So one fixed quantity is the actual width of her friend's face. I guess the height of her friend's face is also fixed in real-life but the height of the face on the screen will vary as you zoom in and out.
+                        </p>
+                    </stack>
+
+                    <stack>
+                        <p>
+                            <image source="photos/students/erica.png" width="100%">
+                            </image>
+                        </p>
+
+                        <p>
+                            I think maybe the distance from the camera could vary like if she moved closer to or further away from her friend? Maybe, also something about the brightness of the photo like if they turned on some extra lights in the room?
+                        </p>
+                    </stack>
+                </sidebyside>
+            </solution>
             <response/>
         </task>
     </exercise>
@@ -103,49 +131,82 @@
         </ol>
         Most people can do number one, but struggle with two and three. Unfortunately, two and three are often more important so we are going to take a moment to practice them.
     </p>
-    <exercise xml:id="ariana-revisited">
-        <title>Returning to Ariana's Photograph</title>
-        <introduction>
-            <p>
-                Consider again the photograph that Ariana is taking on her phone. We'll use four letters to describe what we see:
-                <ul>
-                    <li><m>W</m> is the width of the photograph’s frame;</li>
-                    <li><m>F</m> is the width of the friend's face at 1× zoom;</li>
-                    <li><m>z</m> is the zoom factor, and</li>
-                    <li><m>L</m> is the distance from the left edge of the frame to the left edge of the face.</li>
-                </ul>
-            </p>
-            <image source="photos/ariana.png" width="70%">
-            <shortdescription>
-                Ariana's friend appears on a phone screen.
-            </shortdescription>
-            </image>
-            <p>
-                Consider the expression <m>L + zF</m>. Experiment with the two sliders and observe how the bars A-D change.
-            </p>
-        </introduction>
-        <task>
-            <statement>
+        <exercise xml:id="ariana-revisited">
+            <title>Returning to Ariana's Photograph</title>
+            <introduction>
                 <p>
-                    Which bar do you think represents <m>L+zF</m>?
+                    Consider again the photograph that Ariana is taking on her phone. We'll use four letters to describe what we see:
+                    <ul>
+                        <li><m>W</m> is the width of the photograph’s frame;</li>
+                        <li><m>F</m> is the width of the friend's face at 1× zoom;</li>
+                        <li><m>z</m> is the zoom factor, and</li>
+                        <li><m>L</m> is the distance from the left edge of the frame to the left edge of the face.</li>
+                    </ul>
                 </p>
-            </statement>
-            <choices>
-                <choice><p>A</p></choice>
-                <choice><p>B</p></choice>
-                <choice correct="yes"><p>C</p></choice>
-                <choice><p>D</p></choice>
-            </choices>
-        </task>
-        <task>
-            <statement>
+                <image source="photos/ariana.png" width="70%">
+                <shortdescription>
+                    Ariana's friend appears on a phone screen.
+                </shortdescription>
+                </image>
                 <p>
-                    What quantity does the expression <m>L + zF</m> represent? Explain your thinking.
+                    Consider the expression <m>L + zF</m>. Experiment with the two sliders and observe how the bars A-D change.
                 </p>
-            </statement>
-            <response/>
-        </task>
-    </exercise>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+                        Which bar do you think represents <m>L+zF</m>?
+                    </p>
+                </statement>
+                <choices>
+                    <choice><statement><p>A</p></statement></choice>
+                    <choice><statement><p>B</p></statement></choice>
+                    <choice correct="yes"><statement><p>C</p></statement></choice>
+                    <choice><statement><p>D</p></statement></choice>
+                </choices>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        What quantity does the expression <m>L + zF</m> represent? Explain your thinking.
+                    </p>
+                </statement>
+                <response/>
+            </task>
+            <conclusion>
+                <aside>
+                    <title>Student Thinking</title>
+                    <p>
+                    Here is what some students had to say
+                    about this problem.
+                    </p>
+                </aside>
+                    <p><alert>Student Thinking</alert></p>
+                    <p>
+                        Here is what some students had to say about this problem.
+                    </p>
+                    <sidebyside widths="47% 47%">
+                        <stack>
+                            <p>
+                                <image source="photos/students/sofia.png" width="100%">
+                                </image>
+                            </p>
+                            <p>
+                                As we zoom in, her face should get wider on the screen. By the time we get to 2x zoom, her face should have width <m>2F</m>. I think that means that <m>zF</m> is the width of the face at the current zoom level and <m>L + zF</m> should get bigger as we zoom in. I noticed that both A and C get bigger as we zoom in so I think it's one of those two quantities.
+                            </p>
+                        </stack>
+                        <stack>
+                            <p>
+                                <image source="photos/students/jefferson.png" width="100%">
+                                </image>
+                            </p>
+                            <p>
+                                If we point the camera to the right without changing the zoom, her face gets closer to the left side of the picture, so <m>L</m> gets smaller. That means <m>L + zF</m> gets smaller too. Because of this, I think <m>L + zF</m> has something to do with the distance from the left side of the photo?
+                            </p>
+                        </stack>
+                    </sidebyside> 
+                        </conclusion>
+        </exercise>
     <assemblage>
         <title>Student Thinking</title>
         <p>
