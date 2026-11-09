@@ -26,11 +26,55 @@
                 Ariana is taking a picture of a friend on her phone. She experiments with different camera settings until she's happy with the photograph.
             </p>
 
-            <image source="photos/ariana.png" width="70%">
-            <shortdescription>
-                Ariana's friend appears on a phone screen.
-            </shortdescription>
-            </image>
+            <figure>
+                <caption>Ariana's Photograph</caption>
+                <interactive xml:id="ariana-interactive"
+                platform="jsxgraph"
+                source="code/ariana.js"
+                css="css/ariana.css"
+                width="92%"
+                aspect="20:22">
+
+                <!-- 1. HTML controls -->
+                <slate surface="html" aspect="10:3">
+                    <div xmlns="http://www.w3.org/1999/xhtml" class="ariana-controls">
+                        <div class="control">
+                            <label for="ariana-zoom">Zoom</label>
+                            <input id="ariana-zoom"
+                                type="range"
+                                min="0.5" max="2"
+                                   step="0.01"  value="1"/>
+                            <div class="zoom-markers">
+                                <span id="zoom-marker-0-5" class="zoom-marker">0.5x</span>
+                                <span id="zoom-marker-1-0" class="zoom-marker">1×</span>
+                                <span id="zoom-marker-2-0" class="zoom-marker">2x</span>
+                            </div>
+                        </div>
+
+                        <div class="control">
+                            <label for="ariana-pan">Point camera left/right</label>
+                            <input id="ariana-pan"
+                                    type="range"
+                                    min="-2" max="2"
+                                    step="0.1" value="0"/>
+                            <span class="pan-marker">centered</span>
+                        </div>
+                    </div>
+                </slate>
+
+                <!-- 2. Photograph and phone -->
+                <slate xml:id="ariana-photo-board" surface="jsxboard" aspect="20:9"/>
+
+                <!-- 3. Magnitude bars -->
+                <slate xml:id="ariana-bars-board" surface="jsxboard" aspect="10:3"/>
+
+                <instructions>
+                    <p>Change the zoom and camera direction
+                    to explore the lengths in the photograph.</p>
+                </instructions>
+
+                </interactive>
+            </figure>
 
             <p>
                 In algebra, we usually work with quantities that vary. By <term>quantity</term>, we mean something you can measure. There are many quantities Ariana might consider when taking her photo. Some of them change while others do not. For instance, the <em>width of her friend's face on the screen</em> is one quantity that varies. We can measure this width and watch it change as we zoom in and out. The <em>overall width of the screen</em> is another quantity, but it does not change.
