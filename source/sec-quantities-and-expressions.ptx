@@ -30,8 +30,8 @@
                 <caption>Ariana's Photograph</caption>
                 <interactive xml:id="ariana-interactive"
                 platform="jsxgraph"
-                source="code/ariana.js"
-                css="css/ariana.css"
+                source="code/magnitude-bars.js, code/option-badges.js, code/ariana.js"
+                css="css/option-badges.css, css/ariana.css"
                 width="92%"
                 aspect="20:22">
 
@@ -55,8 +55,8 @@
                             <label for="ariana-pan">Point camera left/right</label>
                             <input id="ariana-pan"
                                     type="range"
-                                    min="-2" max="2"
-                                    step="0.1" value="0"/>
+                                    min="-1" max="1"
+                                    step="0.01" value="0"/>
                             <span class="pan-marker">centered</span>
                         </div>
                     </div>
