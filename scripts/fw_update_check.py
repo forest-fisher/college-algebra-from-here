@@ -8,6 +8,7 @@ It does not commit, create PRs, merge, or deploy; GitHub Actions handles PR crea
 """
 from __future__ import annotations
 
+import os
 import argparse
 import hashlib
 import io
@@ -40,11 +41,19 @@ def sha(data: bytes) -> str:
 
 
 def get_bytes(url: str) -> bytes:
-    request = urllib.request.Request(url, headers={
+    headers = {
         'Accept': 'application/vnd.github+json',
         'User-Agent': 'college-algebra-formula-wheels-updater',
         'X-GitHub-Api-Version': '2022-11-28',
-    })
+    }
+    
+    if url == API_URL:
+        token = os.environ.get('GITHUB_TOKEN')
+        if token:
+            headers['Authorization'] = f'Bearer {token}'
+    
+    request = urllib.request.Request(url, headers=headers)
+    
     with urllib.request.urlopen(request, timeout=50) as response:
         # Content-Length is advisory. Enforce actual bytes as well.
         length = response.headers.get('Content-Length')
