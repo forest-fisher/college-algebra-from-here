@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import io
+import os
 import json
 import re
 import sys
@@ -35,16 +36,27 @@ PINNED_SOURCE = (
 )
 
 
+from fw_verify import AUTHORING_SOURCE
+
+def source_files_for_release(version: str):
+    ver=tuple(int(p) for p in version.split('.'))
+    return PINNED_SOURCE + (AUTHORING_SOURCE if ver >= (1, 0, 1) else ())
+
 def sha(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
 def get_bytes(url: str) -> bytes:
-    request = urllib.request.Request(url, headers={
+    headers = {
         'Accept': 'application/vnd.github+json',
         'User-Agent': 'college-algebra-formula-wheels-updater',
         'X-GitHub-Api-Version': '2022-11-28',
-    })
+    }
+    if url == API_URL:
+        token = os.environ.get('GITHUB_TOKEN')
+        if token:
+            headers['Authorization'] = f'Bearer {token}'
+    request = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(request, timeout=50) as response:
         # Content-Length is advisory. Enforce actual bytes as well.
         length = response.headers.get('Content-Length')
@@ -147,7 +159,7 @@ def inspect_release(release: dict, downloaded: dict[str, bytes]) -> tuple[dict[s
         manifest = json.loads(archive.read('RELEASE_MANIFEST_SHA256.json'))
         files = manifest['files']
         if (set(names) != set(files) | {'RELEASE_MANIFEST_SHA256.json'} or
-                not set(PINNED_SOURCE).issubset(set(names))):
+                not set(source_files_for_release(version)).issubset(set(names))):
             raise ValueError('Official ZIP inventory does not match release manifest')
         for name, expected_hash in files.items():
             if not DIGEST_PATTERN.fullmatch(expected_hash) or sha(archive.read(name)) != expected_hash:
@@ -159,7 +171,7 @@ def inspect_release(release: dict, downloaded: dict[str, bytes]) -> tuple[dict[s
             if canonical[original] != files[original]:
                 raise ValueError(f'Official runtime differs from metadata: {original}')
         updates = {f'vendor/formula-wheels/{original}': archive.read(original)
-                   for original in PINNED_SOURCE}
+                   for original in source_files_for_release(version)}
     updates['vendor/formula-wheels/PUBLIC_VERSION.json'] = downloaded['PUBLIC_VERSION.json']
     updates['assets/code/formula-wheels.js'] = updates['vendor/formula-wheels/src/formula-wheels.js']
     updates['assets/css/formula-wheels.css'] = updates['vendor/formula-wheels/src/formula-wheels.css']
@@ -168,13 +180,14 @@ def inspect_release(release: dict, downloaded: dict[str, bytes]) -> tuple[dict[s
 
 def plan(root: Path, release: dict, downloaded: dict[str, bytes]) -> dict[str, bytes]:
     """No mutations; validate existing pin + incoming stable asset inventory."""
-    from fw_verify import REQUIRED_FILES, validate
+    from fw_verify import required_files, validate
     validate(root)
     lock = json.loads((root / 'formula-wheels.lock.json').read_text(encoding='utf-8'))
     if not choose_release(lock['version'], release):
         return {}
     updates, meta = inspect_release(release, downloaded)
-    if set(updates) != REQUIRED_FILES:
+    version = meta['publicVersion']
+    if set(updates) != required_files(version):
         raise ValueError('Unexpected vendored file set in newly approved release')
     tag = release['tag_name']
     version = meta['publicVersion']
@@ -195,23 +208,32 @@ def plan(root: Path, release: dict, downloaded: dict[str, bytes]) -> dict[str, b
 def apply(root: Path, changes: dict[str, bytes]):
     if not changes:
         return
-    # Local file backup and rollback on write failure; never mutate unknown paths.
+    # All paths were checked by plan(): allow only version-scoped, known
+    # authoring files to be newly created; every legacy file must exist.
     previous = {}
+    created = []
+    allowed_new = frozenset('vendor/formula-wheels/'+p for p in AUTHORING_SOURCE)
     try:
         for relative in changes:
             file = root / relative
-            if not file.is_file():
+            if file.is_file():
+                previous[file] = file.read_bytes()
+            elif relative in allowed_new and not file.exists():
+                created.append(file)
+            else:
                 raise ValueError(f'Refusing update: expected installed path missing: {relative}')
-            previous[file] = file.read_bytes()
         for relative, value in changes.items():
-            (root / relative).write_bytes(value)
+            file = root / relative
+            file.parent.mkdir(parents=True, exist_ok=True)
+            file.write_bytes(value)
         from fw_verify import validate
         validate(root)
     except Exception:
         for path, original in previous.items():
             path.write_bytes(original)
+        for path in created:
+            path.unlink(missing_ok=True)
         raise
-
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)

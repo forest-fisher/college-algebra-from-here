@@ -15,7 +15,7 @@ PROJECT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(PROJECT / 'scripts'))
 from fw_update_check import (PINNED_SOURCE, sha, stable_version, choose_release,
                              inspect_release, plan, apply, official_assets)
-from fw_verify import REQUIRED_FILES, validate
+from fw_verify import REQUIRED_FILES, AUTHORING_SOURCE, required_files, validate
 
 
 def fake_assets(tag: str, archive: bytes, meta: bytes, sums: bytes):
@@ -30,10 +30,18 @@ def fake_assets(tag: str, archive: bytes, meta: bytes, sums: bytes):
     return release, names
 
 
-def fixture(root: Path, tag='v1.0.1'):
+def fixture(root: Path, tag=None):
+    if tag is None:
+        current = json.loads((root/'formula-wheels.lock.json').read_text())['version']
+        parts = [int(x) for x in current.split('.')]
+        tag = f'v{parts[0]}.{parts[1]}.{parts[2]+1}'
     entries = {part: (root/'vendor'/'formula-wheels'/part).read_bytes()
                for part in PINNED_SOURCE if part != 'RELEASE_MANIFEST_SHA256.json'}
-    # Choose a harmless release with exactly the same 1.0.0 runtime bytes.
+    if tuple(int(p) for p in tag[1:].split('.')) >= (1, 0, 1):
+        for name in AUTHORING_SOURCE:
+            path = root/'vendor'/'formula-wheels'/name
+            entries[name] = path.read_bytes() if path.is_file() else f'fixture authoring {name}\n'.encode()
+    # Choose a harmless hypothetical newer release with the same approved runtime bytes.
     manifest = {'release': '22.0', 'checksumAlgorithm': 'SHA-256',
                 'files': {name: sha(data) for name, data in entries.items()}}
     entries['RELEASE_MANIFEST_SHA256.json'] = (json.dumps(manifest)+'\n').encode()
@@ -77,40 +85,58 @@ class UpdateTests(unittest.TestCase):
 
     def test_stable_only_and_no_downgrade(self):
         release, _ = fixture(self.root)
-        self.assertTrue(choose_release('1.0.0', release))
-        self.assertFalse(choose_release('1.0.1', release))
-        self.assertFalse(choose_release('1.0.2', release))
+        current = json.loads((self.root/'formula-wheels.lock.json').read_text())['version']
+        next_version = release['tag_name'][1:]
+        self.assertTrue(choose_release(current, release))
+        self.assertFalse(choose_release(next_version, release))
+        parts = [int(x) for x in next_version.split('.')]
+        future = f'{parts[0]}.{parts[1]}.{parts[2]+1}'
+        self.assertFalse(choose_release(future, release))
         for flag in ('draft', 'prerelease'):
             invalid = dict(release)
             invalid[flag] = True
-            with self.assertRaises(ValueError): choose_release('1.0.0', invalid)
-        invalid = dict(release, tag_name='v1.0.1-rc.1')
-        with self.assertRaises(ValueError): choose_release('1.0.0', invalid)
+            with self.assertRaises(ValueError): choose_release(current, invalid)
+        invalid = dict(release, tag_name=release['tag_name']+'-rc.1')
+        with self.assertRaises(ValueError): choose_release(current, invalid)
 
     def test_valid_upgrade_and_verifier(self):
         release, blobs = fixture(self.root)
         before = (self.root/'formula-wheels.lock.json').read_bytes()
         changes = plan(self.root, release, blobs)
-        self.assertEqual(set(changes), set(REQUIRED_FILES) | {'formula-wheels.lock.json'})
+        next_version=release['tag_name'][1:]
+        self.assertEqual(set(changes), set(required_files(next_version)) | {'formula-wheels.lock.json'})
         self.assertEqual((self.root/'formula-wheels.lock.json').read_bytes(), before)
         apply(self.root, changes)
         validate(self.root)
         lock = json.loads((self.root/'formula-wheels.lock.json').read_text())
-        self.assertEqual(lock['version'], '1.0.1')
-        self.assertEqual(lock['source']['tag'], 'v1.0.1')
-        self.assertEqual(lock['source']['assetSHA256'], sha(blobs['formula-wheels-v1.0.1.zip']))
+        self.assertEqual(lock['version'], next_version)
+        self.assertEqual(lock['source']['tag'], release['tag_name'])
+        self.assertEqual(lock['source']['assetSHA256'], sha(blobs[f'formula-wheels-{release["tag_name"]}.zip']))
+
+
+    def test_101_authoring_files_are_installed_and_verified(self):
+        release, blobs = fixture(self.root)
+        changes = plan(self.root, release, blobs)
+        assert 'vendor/formula-wheels/tools/authoring/add-output-speech.cjs' in changes
+        apply(self.root, changes)
+        validate(self.root)
+        path = self.root/'vendor/formula-wheels/tools/authoring/add-output-speech.cjs'
+        self.assertTrue(path.is_file())
+        path.write_text('tampered', encoding='utf8')
+        with self.assertRaisesRegex(ValueError, 'modified'):
+            validate(self.root)
 
     def test_corrupt_archive_digest(self):
         release, blobs = fixture(self.root)
         bad = dict(blobs)
-        bad['formula-wheels-v1.0.1.zip'] += b'evil'
+        bad[f'formula-wheels-{release["tag_name"]}.zip'] += b'evil'
         with self.assertRaisesRegex(ValueError,'asset SHA-256'):
             inspect_release(release, bad)
 
     def test_corrupt_checksums(self):
         release, blobs = fixture(self.root)
         bad = dict(blobs)
-        bad['SHA256SUMS.txt'] = b'0'*64 + b'  formula-wheels-v1.0.1.zip\n'
+        bad['SHA256SUMS.txt'] = (b'0'*64 + f'  formula-wheels-{release["tag_name"]}.zip\n'.encode())
         asset = next(a for a in release['assets'] if a['name']=='SHA256SUMS.txt')
         asset['digest'] = 'sha256:'+sha(bad['SHA256SUMS.txt'])
         with self.assertRaisesRegex(ValueError,'SHA256SUMS'):

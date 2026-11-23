@@ -32,6 +32,16 @@ REQUIRED_FILES = frozenset({
     *(f'vendor/formula-wheels/{name}' for name in RUNTIME),
 })
 
+# Added in v1.0.1: author-only scripts and documentation. Existing v1.0.0
+# lockfiles remain valid, with the old inventory unchanged.
+AUTHORING_SOURCE = ('tools/authoring/.gitignore', 'tools/authoring/LICENSE', 'tools/authoring/add-output-speech.cjs', 'tools/authoring/add-speech.cjs', 'tools/authoring/cli-common.cjs', 'tools/authoring/examples/circle-logic.js', 'tools/authoring/examples/sample-values.js', 'tools/authoring/generate-values.cjs', 'tools/authoring/output-speech-core.cjs', 'tools/authoring/package.json', 'tools/authoring/speech-core.cjs', 'tools/authoring/speech-engine.cjs', 'tools/authoring/tests/generate-values.test.cjs', 'tools/authoring/tests/output-speech.test.cjs', 'tools/authoring/tests/toolkit.test.cjs', 'docs/formula_wheels_authoring_tools.md')
+
+def required_files(version: str):
+    ver=tuple(int(part) for part in version.split('.'))
+    if ver >= (1, 0, 1):
+        return REQUIRED_FILES | frozenset('vendor/formula-wheels/'+p for p in AUTHORING_SOURCE)
+    return REQUIRED_FILES
+
 def digest(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
@@ -47,7 +57,7 @@ def validate(root: Path = ROOT):
             not re.fullmatch(r'[0-9a-f]{64}', src['assetSHA256'])):
         raise ValueError('Invalid Formula Wheels source pin')
     files = lock['files']
-    if set(files) != REQUIRED_FILES:
+    if set(files) != required_files(version):
         raise ValueError('Formula Wheels lockfile inventory is incomplete or unexpected')
     for relative, expected in files.items():
         if not isinstance(expected, str) or not re.fullmatch(r'[0-9a-f]{64}', expected):
@@ -69,7 +79,7 @@ def validate(root: Path = ROOT):
         raise ValueError('Public release metadata differs from lockfile')
     manifest = json.loads((root / 'vendor/formula-wheels/RELEASE_MANIFEST_SHA256.json').read_text(encoding='utf-8'))
     checked = manifest['files']
-    for original in (*RUNTIME, 'tools/patch_pretext.py', 'LICENSE', 'NOTICE.md'):
+    for original in (*RUNTIME, 'tools/patch_pretext.py', 'LICENSE', 'NOTICE.md', *(AUTHORING_SOURCE if tuple(int(p) for p in version.split('.')) >= (1,0,1) else ())):
         if (not re.fullmatch(r'[0-9a-f]{64}', checked[original]) or
                 checked[original] != files[f'vendor/formula-wheels/{original}']):
             raise ValueError(f'Approved release manifest mismatch for {original}')
