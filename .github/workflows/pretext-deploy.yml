@@ -57,8 +57,11 @@ jobs:
         run: pretext --version
 
       - name: build deploy targets
-        run: pretext build --deploys
-
+        run: python scripts/fw_build.py --deploys
+      - name: Test Formula Wheels PreTeXt integration
+        run: |
+          python tests/formula-wheels/test_external_integration.py
+          python tests/formula-wheels/test_pretext_smoke.py
       - name: run deploy
         run: pretext deploy --no-push
 

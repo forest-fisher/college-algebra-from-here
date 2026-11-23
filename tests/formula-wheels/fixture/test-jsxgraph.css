@@ -1,0 +1,36 @@
+/* EXAMPLE-ONLY override for the PreTeXt two-slate layout.
+   The shared Formula Wheels CSS remains byte-for-byte unchanged.
+
+   The legacy gallery uses 104px / 125px vertical padding on a tall
+   stage.  This small equation instead occupies a 2:1 HTML slate.
+*/
+#formula-wheels[data-slate="equation"] {
+  box-sizing: border-box;
+  height: 228px;
+  min-height: 228px;
+  padding: 70px 8px 82px;
+}
+
+/* Keep the diagnostics below the stage without unnecessary margins. */
+#fw-alpha2-status {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* On narrow screens, limit the stage height so its message still fits. */
+@media (max-width: 480px) {
+  #formula-wheels[data-slate="equation"] {
+    height: 205px;
+    min-height: 205px;
+    padding: 60px 4px 68px;
+  }
+}
+
+/* Example-specific responsive JSXGraph constraint; no shared engine change. */
+#example-board.jxgbox {
+  box-sizing: border-box;
+  display: block;
+  width: calc(100% - 16px) !important;
+  max-width: calc(100% - 16px) !important;
+  margin-inline: auto;
+}

@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "dependency": "Formula Wheels",
+  "version": "1.0.0",
+  "source": {
+    "repository": "https://github.com/forest-fisher/formula-wheels",
+    "tag": "v1.0.0",
+    "asset": "formula-wheels-v1.0.0.zip",
+    "assetSHA256": "c0c48f8b29836d636629635b9ebec22fe516857d49fda5ca896d12fc05b93e93"
+  },
+  "integration": {
+    "milestone": "22.1-B",
+    "status": "candidate; no new official library release",
+    "pretext": "2.56.2"
+  },
+  "files": {
+    "assets/code/formula-wheels.js": "491fa7193a042cdf0a98f34ce89fab5e57209eead6cab9866eba879c1b2b96fe",
+    "assets/css/formula-wheels.css": "ffbe0ab2b8b60b95715c8508f9e9800dcaacb929436767a22245c6169764842b",
+    "vendor/formula-wheels/LICENSE": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+    "vendor/formula-wheels/NOTICE.md": "834c6f64820f942163d246d10d2f179043f8a7a0aba27aac8aa6ce36b4f7fa1e",
+    "vendor/formula-wheels/PUBLIC_VERSION.json": "255288597bb25f015c92a966c2e53bba27c01ed1c5ba6b4b94c3d6b857a9ee81",
+    "vendor/formula-wheels/RELEASE_MANIFEST_SHA256.json": "fe0c75495cd0cae584c944f77e449c80e5d5b3fc131241a4be9d39b1db7e1d2c",
+    "vendor/formula-wheels/src/child-mathjax-config.js": "e33e6b62c3934669c5e320064f2dd1307a1ad91a085ceb8da5a9a34744315acd",
+    "vendor/formula-wheels/src/formula-wheels.css": "ffbe0ab2b8b60b95715c8508f9e9800dcaacb929436767a22245c6169764842b",
+    "vendor/formula-wheels/src/formula-wheels.js": "491fa7193a042cdf0a98f34ce89fab5e57209eead6cab9866eba879c1b2b96fe",
+    "vendor/formula-wheels/src/iframe-scheduler.js": "9e8da8dd62398d36916ddb30b59955069c246dfc2d9d89b63a7c725dea0a25df",
+    "vendor/formula-wheels/tools/patch_pretext.py": "6bf15923521ab7376a0e72a7bb9b0156e41e97384866db077fb04b52626f5116"
+  }
+}
