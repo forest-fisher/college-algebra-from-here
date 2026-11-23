@@ -25,6 +25,8 @@ jobs:
 
       - name: Check official release and prepare vendored files
         id: update
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/fw_update_check.py --apply --github-output "$GITHUB_OUTPUT"
 
       - name: Install textbook dependencies
