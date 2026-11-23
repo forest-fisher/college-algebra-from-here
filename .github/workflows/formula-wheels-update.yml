@@ -1,0 +1,70 @@
+# 22.1-C: check only official Formula Wheels stable releases; open a review-only PR.
+# This workflow never merges a PR or deploys the textbook.
+name: Check Formula Wheels stable release
+
+on:
+  schedule:
+    - cron: '17 13 * * 1'  # Weekly Monday UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: formula-wheels-stable-update
+  cancel-in-progress: false
+
+jobs:
+  check-and-propose:
+    runs-on: ubuntu-latest
+    container: oscarlevin/pretext-full
+    steps:
+      - name: Checkout textbook
+        uses: actions/checkout@v4
+
+      - name: Check official release and prepare vendored files
+        id: update
+        run: python scripts/fw_update_check.py --apply --github-output "$GITHUB_OUTPUT"
+
+      - name: Install textbook dependencies
+        if: steps.update.outputs.updated == 'true'
+        run: pip install -r requirements.txt
+
+      - name: Validate new pin and integration tests
+        if: steps.update.outputs.updated == 'true'
+        run: |
+          python scripts/fw_verify.py
+          python tests/formula-wheels/test_auto_update.py
+          python tests/formula-wheels/test_external_integration.py
+          python tests/formula-wheels/test_pretext_smoke.py
+          python scripts/fw_build.py web
+
+      - name: Open or update review pull request (never merge)
+        if: steps.update.outputs.updated == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
+          branch: maintenance/formula-wheels-stable-update
+          delete-branch: false
+          commit-message: 'chore: update Formula Wheels to v${{ steps.update.outputs.version }}'
+          title: 'Update Formula Wheels to v${{ steps.update.outputs.version }}'
+          body: |
+            Automatically prepared from an official, stable Formula Wheels GitHub release.
+
+            Previous pin: v${{ steps.update.outputs.previous_version }}
+            Proposed pin: v${{ steps.update.outputs.version }}
+
+            Validation in this workflow:
+            - GitHub release asset digests and published SHA256SUMS.txt
+            - Full ZIP content vs release manifest and runtime metadata
+            - Textbook lockfile and vendored asset mirrors
+            - Formula Wheels integration regression tests and a PreTeXt web build
+
+            **Review before merging. This workflow does not merge or deploy.**
+          add-paths: |
+            formula-wheels.lock.json
+            assets/code/formula-wheels.js
+            assets/css/formula-wheels.css
+            vendor/formula-wheels/**
