@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "dependency": "Formula Wheels",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "source": {
     "repository": "https://github.com/forest-fisher/formula-wheels",
-    "tag": "v1.0.0",
-    "asset": "formula-wheels-v1.0.0.zip",
-    "assetSHA256": "c0c48f8b29836d636629635b9ebec22fe516857d49fda5ca896d12fc05b93e93"
+    "tag": "v1.0.1",
+    "asset": "formula-wheels-v1.0.1.zip",
+    "assetSHA256": "60dba47e276496f511bd1344dae5efd124a4f05de594c90ae2b0af95a1bd8f1a"
   },
   "integration": {
     "milestone": "22.1-B",
@@ -18,12 +18,28 @@
     "assets/css/formula-wheels.css": "ffbe0ab2b8b60b95715c8508f9e9800dcaacb929436767a22245c6169764842b",
     "vendor/formula-wheels/LICENSE": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
     "vendor/formula-wheels/NOTICE.md": "834c6f64820f942163d246d10d2f179043f8a7a0aba27aac8aa6ce36b4f7fa1e",
-    "vendor/formula-wheels/PUBLIC_VERSION.json": "255288597bb25f015c92a966c2e53bba27c01ed1c5ba6b4b94c3d6b857a9ee81",
-    "vendor/formula-wheels/RELEASE_MANIFEST_SHA256.json": "fe0c75495cd0cae584c944f77e449c80e5d5b3fc131241a4be9d39b1db7e1d2c",
+    "vendor/formula-wheels/PUBLIC_VERSION.json": "d298c7bcaf6146e777726b312c08f75894cbd8b3fed757618d450d810b213f6b",
+    "vendor/formula-wheels/RELEASE_MANIFEST_SHA256.json": "8553d34acfe5f31255ff0d2264793f361c2b2af0bed914d9a48ee1f24d8844e6",
+    "vendor/formula-wheels/docs/formula_wheels_authoring_tools.md": "6a466dc7e2e2a1831e084980f7933478c5f5966fa56f60be7ee317ad81c03d7b",
     "vendor/formula-wheels/src/child-mathjax-config.js": "e33e6b62c3934669c5e320064f2dd1307a1ad91a085ceb8da5a9a34744315acd",
     "vendor/formula-wheels/src/formula-wheels.css": "ffbe0ab2b8b60b95715c8508f9e9800dcaacb929436767a22245c6169764842b",
     "vendor/formula-wheels/src/formula-wheels.js": "491fa7193a042cdf0a98f34ce89fab5e57209eead6cab9866eba879c1b2b96fe",
     "vendor/formula-wheels/src/iframe-scheduler.js": "9e8da8dd62398d36916ddb30b59955069c246dfc2d9d89b63a7c725dea0a25df",
+    "vendor/formula-wheels/tools/authoring/.gitignore": "295aa1f18923880afebb2e08aa70a8c4f285cc52baea238b8d2864d10e45d825",
+    "vendor/formula-wheels/tools/authoring/LICENSE": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+    "vendor/formula-wheels/tools/authoring/add-output-speech.cjs": "b8ac2be665876bdd6f2e18f553ace585f8fc033de8826f0e5ca5a22c714ee1f2",
+    "vendor/formula-wheels/tools/authoring/add-speech.cjs": "671ccd2cd3d894d9e064b4bb875ffed74d1f20bfc20cc1fc4cc5d1e838881ebc",
+    "vendor/formula-wheels/tools/authoring/cli-common.cjs": "58dc2ea6a3a0f57e96cc4c62bd1959556d7b6b9b33788c5329fb095154978098",
+    "vendor/formula-wheels/tools/authoring/examples/circle-logic.js": "6560f9893d88011a7d8c074b7c15338588823f103e4f1fe6165b6856172d4d36",
+    "vendor/formula-wheels/tools/authoring/examples/sample-values.js": "c68c5d91903d29a7f256d7f2d1ee32756d44d0bbc30b2047019d6f918f148cac",
+    "vendor/formula-wheels/tools/authoring/generate-values.cjs": "51a613efd1b9a96755a44547e830d5e934a9176a1729e8f276b0914f85d2dc90",
+    "vendor/formula-wheels/tools/authoring/output-speech-core.cjs": "e3c56df13be88d2563848d2ec8208fe60a4e5a6d61ca23d96e7d35738a3066d1",
+    "vendor/formula-wheels/tools/authoring/package.json": "480a28b26281a2928f683a0201422826869f79894440056cb4762a645f2d9756",
+    "vendor/formula-wheels/tools/authoring/speech-core.cjs": "b8814a9945162ac0f5e30254e6c0fb7b780133a9f9c241b5ee4af4e504f6fc7c",
+    "vendor/formula-wheels/tools/authoring/speech-engine.cjs": "955c952e8571b46548559c8e64d7ab705348244203e6445398db615813f3b9a1",
+    "vendor/formula-wheels/tools/authoring/tests/generate-values.test.cjs": "afa73f57f715e20f67754f96d3978434d57791c78ffa1f4853d72a4c23fc9c36",
+    "vendor/formula-wheels/tools/authoring/tests/output-speech.test.cjs": "1475c53fe952e8fb78c998d3d0c3b31dbe407446819fc82ab0c24d1792abd872",
+    "vendor/formula-wheels/tools/authoring/tests/toolkit.test.cjs": "9c99f8aea28f6329a5fe4dd816addd4488f8f0dcaff29e2d6108c7cf172b5619",
     "vendor/formula-wheels/tools/patch_pretext.py": "6bf15923521ab7376a0e72a7bb9b0156e41e97384866db077fb04b52626f5116"
   }
 }
