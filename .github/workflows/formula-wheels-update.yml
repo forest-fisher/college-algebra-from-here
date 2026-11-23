@@ -29,6 +29,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/fw_update_check.py --apply --github-output "$GITHUB_OUTPUT"
 
+      - name: Install Node.js for PreTeXt
+        if: steps.update.outputs.updated == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Verify Node.js installation
+        if: steps.update.outputs.updated == 'true'
+        run: |
+          node --version
+          npm --version
+
       - name: Install textbook dependencies
         if: steps.update.outputs.updated == 'true'
         run: pip install -r requirements.txt
