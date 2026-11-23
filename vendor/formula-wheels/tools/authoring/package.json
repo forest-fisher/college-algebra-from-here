@@ -1,0 +1,16 @@
+{
+  "name": "formula-wheels-authoring-tools",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Author-side only: generate Formula Wheels value arrays and optional SRE speech strings, including callback results",
+  "license": "MPL-2.0",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test tests/*.test.cjs"
+  },
+  "dependencies": {
+    "acorn": "8.15.0",
+    "mathjax-full": "3.2.1",
+    "speech-rule-engine": "4.1.2"
+  }
+}

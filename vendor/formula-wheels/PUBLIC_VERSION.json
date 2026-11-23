@@ -1,10 +1,10 @@
 {
-  "publicVersion": "1.0.0",
-  "tag": "v1.0.0",
+  "publicVersion": "1.0.1",
+  "tag": "v1.0.1",
   "approvedInternalVersion": "22.0",
   "approvedOn": "2026-11-21",
-  "releaseAsset": "formula-wheels-v1.0.0.zip",
-  "releaseAssetSHA256": "c0c48f8b29836d636629635b9ebec22fe516857d49fda5ca896d12fc05b93e93",
+  "releaseAsset": "formula-wheels-v1.0.1.zip",
+  "releaseAssetSHA256": "60dba47e276496f511bd1344dae5efd124a4f05de594c90ae2b0af95a1bd8f1a",
   "originalArchiveFileName": "formula_wheels_v22_0_release.zip",
   "originalArchiveSHA256": "c0c48f8b29836d636629635b9ebec22fe516857d49fda5ca896d12fc05b93e93",
   "canonicalRuntimeSHA256": {
@@ -16,5 +16,5 @@
   "licensing": "MPL-2.0",
   "copyright": "Copyright (c) 2026 Forest Fisher",
   "developmentDisclosure": "Vibe coded with extensive ChatGPT (OpenAI) assistance",
-  "note": "First public release is a version mapping of the approved internal 22.0; original ZIP is preserved byte-for-byte."
+  "note": "Authoring-only patch; approved internal 22.0 runtime unchanged; v1.0.0 archive preserved."
 }
